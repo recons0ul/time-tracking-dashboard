@@ -1,80 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Time tracking dashboard</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Time tracking dashboard</title>
 
-  Report for
-  Jeremy Robson
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="item-row-2">
+          <div class="profile">
+            <img src="images/image-jeremy.png" alt="profile-picture" />
+            <div>
+              <p>Report for</p>
+              <h4>Jeremy Robson</h4>
+            </div>
+          </div>
 
-  Daily
-  Weekly
-  Monthly
+          <div class="rb-selection">
+            <label for="daily-rb">
+              <input id="daily-rb" onchange="toggleDailyMode(this)" type="radio" name="selection" />
+              <span>Daily</span>
+            </label>
+            <label for="weekly-rb">
+              <input id="weekly-rb" onchange="toggleWeeklyMode(this)" type="radio" name="selection" />
+              <span>Weekly</span>
+            </label>
+            <label for="monthly-rb">
+              <input id="monthly-rb" onchange="toggleMonthlyMode(this)" type="radio" name="selection" />
+              <span>Monthly</span>
+            </label>
+          </div>
+        </div>
 
-  Work
-  5hrs <!-- daily -->
-  Previous - 7hrs <!-- daily -->
-  32hrs <!-- weekly -->
-  Previous - 36hrs <!-- weekly -->
-  103hrs <!-- monthly -->
-  Previous - 128hrs <!-- monthly -->
+        <div id="work" class="item-container">
+          <div class="item">
+            <div class="image-container">
+              <img class="item-image" src="images/icon-work.svg" />
+            </div>
+            <div class="item-content">
+              <div class="item-title">
+                <p>Work</p>
+                <button class="options">
+                  <img src="images/icon-ellipsis.svg" alt="options-button-image" />
+                </button>
+              </div>
 
-  Play
-  1hr <!-- daily -->
-  Previous - 2hrs <!-- daily -->
-  10hrs <!-- weekly -->
-  Previous - 8hrs <!-- weekly -->
-  23hrs <!-- monthly -->
-  Previous - 29hrs <!-- monthly -->
+              <div class="item-description">
+                <h3><span></span>hrs</h3>
+                <p class="prev">Last Week - <span></span>hrs</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  Study
-  0hrs <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  4hrs <!-- weekly -->
-  Previous - 7hrs <!-- weekly -->
-  13hrs <!-- monthly -->
-  Previous - 19hrs <!-- monthly -->
+        <div id="play" class="item-container">
+          <div class="item">
+            <div class="image-container">
+              <img class="item-image" src="images/icon-play.svg" />
+            </div>
+            <div class="item-content">
+              <div class="item-title">
+                <p>Play</p>
+                <button class="options">
+                  <img src="images/icon-ellipsis.svg" alt="options-button-image" />
+                </button>
+              </div>
+              <div class="item-description">
+                <h3><span></span>hrs</h3>
+                <p class="prev">Last Week - <span></span>hrs</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  Exercise
-  1hr <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  4hrs <!-- weekly -->
-  Previous - 5hrs <!-- weekly -->
-  11hrs <!-- monthly -->
-  Previous - 18hrs <!-- monthly -->
+        <div id="study" class="item-container">
+          <div class="item">
+            <div class="image-container">
+              <img class="item-image" src="images/icon-study.svg" />
+            </div>
+            <div class="item-content">
+              <div class="item-title">
+                <p>Study</p>
+                <button class="options">
+                  <img src="images/icon-ellipsis.svg" alt="options-button-image" />
+                </button>
+              </div>
+              <div class="item-description">
+                <h3><span></span>hrs</h3>
+                <p class="prev">Last Week - <span></span>hrs</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  Social
-  1hr <!-- daily -->
-  Previous - 3hrs <!-- daily -->
-  5hrs <!-- weekly -->
-  Previous - 10hrs <!-- weekly -->
-  21hrs <!-- monthly -->
-  Previous - 23hrs <!-- monthly -->
+        <div id="exercise" class="item-container">
+          <div class="item">
+            <div class="image-container">
+              <img class="item-image" src="images/icon-exercise.svg" />
+            </div>
+            <div class="item-content">
+              <div class="item-title">
+                <p>Exercise</p>
+                <button class="options">
+                  <img src="images/icon-ellipsis.svg" alt="options-button-image" />
+                </button>
+              </div>
+              <div class="item-description">
+                <h3><span></span>hrs</h3>
+                <p class="prev">Last Week - <span></span>hrs</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  Self Care
-  0hrs <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  2hrs <!-- weekly -->
-  Previous - 2hrs <!-- weekly -->
-  7hrs <!-- monthly -->
-  Previous - 11hrs <!-- monthly -->
+        <div id="social" class="item-container">
+          <div class="item">
+            <div class="image-container">
+              <img class="item-image" src="images/icon-social.svg" />
+            </div>
+            <div class="item-content">
+              <div class="item-title">
+                <p>Social</p>
+                <button class="options">
+                  <img src="images/icon-ellipsis.svg" alt="options-button-image" />
+                </button>
+              </div>
+              <div class="item-description">
+                <h3><span></span>hrs</h3>
+                <p class="prev">Last Week - <span></span>hrs</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+        <div id="self-care" class="item-container">
+          <div class="item">
+            <div class="image-container">
+              <img class="item-image" src="images/icon-self-care.svg" />
+            </div>
+            <div class="item-content">
+              <div class="item-title">
+                <p>Self Care</p>
+                <button class="options">
+                  <img src="images/icon-ellipsis.svg" alt="options-button-image" />
+                </button>
+              </div>
+              <div class="item-description">
+                <h3><span></span>hrs</h3>
+                <p class="prev">Last Week - <span></span>hrs</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="attribution">
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by
+          <a href="#">recons0ul</a>.
+        </div>
+      </div>
+    </main>
+    <script src="index.js"></script>
+  </body>
 </html>

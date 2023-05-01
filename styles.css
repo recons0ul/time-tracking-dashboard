@@ -1,0 +1,227 @@
+@font-face {
+  font-family: "Rubik";
+  src: url("static/Rubik-Regular.ttf"), url("static/Rubik-Light.ttf"), url("static/Rubik-Medium.ttf");
+}
+
+html,
+body {
+  margin: 0;
+  background-color: hsl(226, 43%, 10%);
+  color: white;
+  font-family: Rubik;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+h4 {
+  font-size: 28px;
+  font-weight: 300;
+  margin: 0;
+}
+
+p {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+@media (min-width: 710px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1.5vw;
+    width: 90vw;
+  }
+
+  .profile {
+    padding: 20px 40px 80px 20px;
+  }
+
+  .profile > img {
+    border: 5px solid white;
+    border-radius: 50%;
+    width: 80px;
+  }
+
+  .item-row-2 {
+    grid-row: span 2;
+  }
+
+  .rb-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-around;
+    padding: 20px 10px;
+    padding-bottom: 30px;
+  }
+
+  .item {
+    height: 220px;
+  }
+}
+
+@media (max-width: 709px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(7, 1fr);
+    gap: 30px;
+    height: 95vh;
+    margin-top: 100px;
+  }
+
+  .profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .profile > img {
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+  .rb-selection {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+  }
+
+  .item-description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .item {
+    height: 140px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.container div {
+  border-radius: 10px;
+}
+
+.item-row-2 {
+  background-color: hsl(235, 46%, 20%);
+}
+
+.profile {
+  background-color: hsl(246, 80%, 60%);
+}
+
+.rb-selection > label {
+  color: hsl(236, 100%, 87%);
+}
+
+.rb-selection > label:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.rb-selection > label > input[type="radio"] {
+  visibility: hidden;
+  width: 0;
+}
+
+.rb-selection > label > input[type="radio"]:checked + span {
+  color: white;
+}
+
+.image-container {
+  position: absolute;
+  overflow: hidden;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 15px;
+  width: 100%;
+}
+
+#work .image-container {
+  background-color: hsl(15, 100%, 70%);
+}
+
+#play .image-container {
+  background-color: hsl(195, 74%, 62%);
+}
+
+#study .image-container {
+  background-color: hsl(348, 100%, 68%);
+}
+
+#exercise .image-container {
+  background-color: hsl(145, 58%, 55%);
+}
+
+#social .image-container {
+  background-color: hsl(264, 64%, 52%);
+}
+
+#self-care .image-container {
+  background-color: hsl(43, 84%, 65%);
+}
+
+.item {
+  position: relative;
+  width: 100%;
+}
+
+.image-container > img {
+  margin-top: -5px;
+  margin-right: 10px;
+  float: right;
+}
+
+.options {
+  border: none;
+  background-color: hsla(0, 0%, 100%, 0);
+}
+
+.options:hover {
+  cursor: pointer;
+  filter: brightness(1.50);
+}
+
+.item-content {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: hsl(235, 46%, 20%);
+  padding: 10px;
+}
+
+.item-content:hover {
+  cursor: pointer;
+}
+
+.item-content:active {
+  background-color: hsl(235, 45%, 61%);
+}
+
+.item-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-title > p {
+  font-size: 18px;
+  font-weight: 500;
+}
