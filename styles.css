@@ -1,6 +1,19 @@
 @font-face {
-  font-family: "Rubik";
-  src: url("static/Rubik-Regular.ttf"), url("static/Rubik-Light.ttf"), url("static/Rubik-Medium.ttf");
+  font-family: "RubikLight";
+  src: url("static/Rubik-Light.ttf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "RubikRegular";
+  src: url("static/Rubik-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "RubikMedium";
+  src: url("static/Rubik-Medium.ttf");
+  font-weight: 500;
 }
 
 html,
@@ -8,7 +21,7 @@ body {
   margin: 0;
   background-color: hsl(226, 43%, 10%);
   color: white;
-  font-family: Rubik;
+  font-family: "RubikLight", sans-serif;
 }
 
 main {
@@ -21,8 +34,9 @@ main {
   width: 100vw;
 }
 
-h3 {
-  font-size: 32px;
+h3 { 
+  font-weight: 500;
+  
 }
 
 h4 {
@@ -36,7 +50,12 @@ p {
   font-size: 14px;
 }
 
-@media (min-width: 710px) {
+@media (min-width: 890px) {
+  h3 {
+    font-size: 4rem;
+    margin: 8px;
+  }
+
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -47,6 +66,10 @@ p {
 
   .profile {
     padding: 20px 40px 80px 20px;
+  }
+
+  .profile h4 {
+    max-width: 100px;
   }
 
   .profile > img {
@@ -73,7 +96,11 @@ p {
   }
 }
 
-@media (max-width: 709px) {
+@media (max-width: 889px) {
+  h3 {
+    font-size: 32px;
+    margin: 10px;
+  }
   .container {
     display: grid;
     grid-template-columns: 1fr;
@@ -110,7 +137,7 @@ p {
   }
 
   .item {
-    height: 170px;
+    height: 135px;
   }
 
   p {
@@ -187,6 +214,11 @@ p {
   width: 100%;
 }
 
+.item p {
+  font-family: "RubikRegular", sans-serif;
+  font-weight: 500;
+}
+
 .image-container > img {
   margin-top: -5px;
   margin-right: 10px;
@@ -200,7 +232,7 @@ p {
 
 .options:hover {
   cursor: pointer;
-  filter: brightness(1.50);
+  filter: brightness(1.5);
 }
 
 .item-content {
@@ -227,5 +259,10 @@ p {
 
 .item-title > p {
   font-size: 18px;
-  font-weight: 500;
+  font-family: "RubikRegular", sans-serif;
+  font-weight: 700;
+}
+
+.item-description>p {
+  color: hsl(236, 100%, 87%);
 }
